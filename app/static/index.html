@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour Bikes (demo store)</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#55555c; --line:#e3e3e6; --accent:#1d4ed8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:#fff; }
+  header { border-bottom:1px solid var(--line); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  .nav { display:flex; justify-content:space-between; align-items:center; height:64px; }
+  .logo { font-weight:700; letter-spacing:.02em; }
+  .note { background:#fff7e6; border-bottom:1px solid #f1d9a6; font-size:14px; color:#6b4e12; padding:8px 0; }
+  .hero { padding:64px 0 40px; }
+  h1 { font-size:40px; line-height:1.15; margin:0 0 14px; max-width:16ch; }
+  .hero p { color:var(--muted); max-width:52ch; margin:0 0 24px; }
+  .cta { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:12px 18px; font:inherit; font-weight:600; cursor:pointer; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; padding:24px 0 72px; }
+  .card { border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .card h2 { font-size:17px; margin:0 0 6px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  .try { font-size:14px; color:var(--muted); }
+  .try code { background:#f3f3f5; padding:2px 6px; border-radius:6px; }
+</style>
+</head>
+<body>
+<div class="note"><div class="wrap">Demo store for the AI support chatbot. Harbour Bikes is fictional; the bot answers from the sample documents in <code>data/sample_docs</code>.</div></div>
+<header><div class="wrap nav"><span class="logo">HARBOUR BIKES</span><span class="try">Sydney · e-bikes and city bikes</span></div></header>
+<main class="wrap">
+  <section class="hero">
+    <h1>City bikes and e-bikes, serviced in Sydney.</h1>
+    <p>Questions about delivery, returns, warranty or which bike fits you? Our assistant answers instantly, 24/7, and hands you to a person when it isn't sure.</p>
+    <button class="cta" type="button" onclick="window.SupportBot && window.SupportBot.open()">Chat with us</button>
+    <p class="try" style="margin-top:18px">Try: <code>How long does delivery take to Melbourne?</code> <code>Can I return a bike I've ridden?</code> <code>Do you sell scooters?</code></p>
+  </section>
+  <section class="grid" aria-label="Highlights">
+    <div class="card"><h2>Free Sydney delivery</h2><p>Assembled and safety-checked before it arrives.</p></div>
+    <div class="card"><h2>30-day returns</h2><p>Changed your mind? See our returns policy.</p></div>
+    <div class="card"><h2>2-year warranty</h2><p>Frames, motors and batteries covered.</p></div>
+  </section>
+</main>
+<script src="/static/widget.js" data-title="Harbour Bikes support" data-accent="#1d4ed8" defer></script>
+</body>
+</html>

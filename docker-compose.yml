@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data          # your documents + the leads/messages database
+    restart: unless-stopped
+
+  telegram:
+    build: .
+    env_file: .env
+    command: ["python", "-m", "app.telegram_bot"]
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    profiles: ["telegram"]       # start with: docker compose --profile telegram up -d
