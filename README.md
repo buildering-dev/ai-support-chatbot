@@ -21,7 +21,7 @@ When the answer isn't in the documents, the bot hands off and captures the lead:
 ## Quick start (2 minutes)
 
 ```bash
-git clone https://github.com/AIpiggyyy/ai-support-chatbot.git
+git clone https://github.com/buildering-dev/ai-support-chatbot.git
 cd ai-support-chatbot
 pip install -r requirements.txt
 uvicorn app.server:app --port 8000
